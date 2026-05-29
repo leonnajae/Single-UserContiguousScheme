@@ -12,6 +12,10 @@
       padding: 20px;
     }
 
+    p {
+      text-align: center;
+    }
+    
     .container {
       max-width: 900px;
       margin: auto;
@@ -120,7 +124,7 @@
 <div class="container">
 
   <h1>Single-User Contiguous Scheme</h1>
-  <h2>Leonna Jae</h2>
+  <p>PECINA, LEONNA JAE F.</p>
 
   <label>Memory Size (K):</label>
   <input type="number" id="memorySize">
@@ -256,7 +260,7 @@ async function startSimulation() {
   for(let job of jobs) {
 
     output.innerHTML += `
-      <h3>Allocating Memory for ${job.name}...</h3>
+      <h3>Allocating Memory for J${job.size}...</h3>
     `;
 
     if(job.size <= availableMemory) {
@@ -273,7 +277,7 @@ async function startSimulation() {
         </ul>
 
         <div class="success">
-          Memory for ${job.name} was successfully allocated.
+          Memory for Job${job.size} was successfully allocated.
         </div>
       `;
 
@@ -302,7 +306,7 @@ async function startSimulation() {
     else {
 
       output.innerHTML += `
-        <div class="failed">
+        <div ="failed">
           Insufficient Memory!!!
         </div>
       `;
